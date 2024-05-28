@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+     font-family: 'Outfit', sans-serif;
+        background: linear-gradient(#ffdad5, #fff7f9);
+    }
+    .container{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+    }
+    .left-title h2{
+        font-weight: 600;
+        color: #a363aa;
+        font-size: 40px;
+        margin-bottom:5px ;
+    }
+    .left-title hr{
+        border: none;
+        width: 120px;
+        height: 5px;
+        background-color: #a363aa;
+        border-radius: 10px;
+        margin-bottom: 20px ;
+    }
+    .inputs{
+        width: 400px;
+        height: 50px;
+        border: none;
+        outline: none;
+        padding-left: 25px;
+        font-weight: 500;
+        color: #666;
+        border-radius: 50px;
+
+    }
+    .left textarea{
+        height: 140px;
+        padding-top: 15px;
+        border-radius: 20px;
+
+    }
+    .inputs:focus{
+        border: 2px solid #ff994f;
+    }
+    .inputs::placeholder{
+        color:#a9a9a9 ;
+    }
+    .left button{
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+        font-size: 16px;
+        color: white;
+        gap: 10px;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(270deg,#ff994f, #fa6d86);
+        cursor: pointer;
+    }
+    .left button:hover{
+        opacity: 0.7;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form class="left" th:action="@{/save}" method="post" th:object="${recette}">
+            <div class="left-title">
+                <h2>Add a new recipe</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="id" th:value="${recette.id}"/>
+            <input type="text" name="name" placeholder="name" class="inputs" required th:value="${recette.name}">
+            <input type="text" name="ingredients" placeholder="ingredients" class="inputs" required th:value="${recette.ingredients}">
+            <textarea name="description" placeholder="description" class="inputs" required th:value="${recette.description}"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="right">
+            <img src="/right_img.png">
+
+        </div>
+    </div>
+</body>
+</html>

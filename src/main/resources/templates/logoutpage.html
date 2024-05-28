@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyRecipes</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif ;
+    }
+    body{
+        height: 100vh;
+        background: url("/food3.jpg");
+        background-size: cover;
+        background-repeat: no-repeat ;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #b5633c;
+        font-size: 1rem;
+    }
+    a:hover{
+        color: #ffffff;
+    }
+    /* header */
+    header{
+        position: relative;
+        padding: 0 2rem ;
+    }
+    .navbar{
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar .logo a{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .navbar .links{
+        display: flex;
+        gap: 2rem;
+    }
+    .content{
+        width: 800px;
+        height: fit-content;
+        /*margin-left: 750px;
+        margin-top: 150px;*/
+        padding: 10px ;
+        margin: 100px auto;
+
+    }
+    .content h3{
+        text-align: center;
+        color: #ffffff;
+        font-size: 35px;
+        padding-bottom: 30px;
+    }
+    .content p{
+        justify-content: center;
+        color: white;
+        padding: 15px;
+        background-color: black;
+        opacity: 0.5;
+    }
+</style>
+<body>
+<header>
+    <div class="navbar" >
+        <div class="logo"><a href="/">MyRecipes</a> </div>
+        <ul class="links">
+
+            <li><a href="available_recipes">Available recipes</a> </li>
+            <li><a href="/favorit">Favorit</a> </li>
+            <li><a href="/new_recipe">New recipe</a> </li>
+            <li><a href="/logout">Log Out</a></li>
+
+        </ul>
+    </div>
+</header>
+
+<div class="content">
+    <h3>Welcom to MyRecipes</h3>
+    <p>your go-to destination for culinary inspiration! Whether you're a seasoned chef or just starting out in the kitchen, our collection of diverse and delicious recipes will help you create mouthwatering meals with ease. From quick weeknight dinners to elaborate gourmet dishes, our recipes are crafted to suit every taste and occasion. Join our community of food enthusiasts, discover new flavors, and transform your cooking experience. Dive in and start exploring the world of MyRecipes today!</p>
+</div>
+</body>
+</html>
